@@ -1,6 +1,0 @@
-constants/BasePage.class
-constants/TestNGLitstner.class
-constants/ExtentReport.class
-pages/LoginPage.class
-testCases/TestOn.class
-constants/Locators.class
