@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Testing irctc">
-    <test name="Sample Test">
+<suite name="Testing irctc" parallel="methods" thread-count="2">
+    <test name="Sample Test in Chrome Browser">
+        <parameter name="browserName" value="Chrome"></parameter>
+        <classes>
+            <class name="testCases.TestOn"/>
+        </classes>
+    </test>
+    <test name="Sample Test in Firefox Browser">
+        <parameter name="browserName" value="Firefox"></parameter>
         <classes>
             <class name="testCases.TestOn"/>
         </classes>

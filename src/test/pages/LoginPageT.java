@@ -10,14 +10,20 @@ import static base.BasePage.driver;
 
 public class LoginPageT extends LoginPage {
 
+    BasePage basePage = new BasePage();
+
     @Step("Open SignIN portal and enter invalid credentials")
     public void signInToIrctcPortal() throws Exception {
+        String username = basePage.readExcelData(0, "Username");
+        String password = basePage.readExcelData(0, "Password");
+        System.out.println(username);
+        System.out.println(password);
         if(loginOnHomeScreen.isDisplayed()){
 
             loginOnHomeScreen.click();
             Thread.sleep(5000);
-            enterUsername("username");
-            enterPassword("password");
+            enterUsername(username);
+            enterPassword(password);
             Thread.sleep(10000);
             clickOnSignInBtn();
             Thread.sleep(5000);

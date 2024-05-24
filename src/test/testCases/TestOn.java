@@ -1,16 +1,21 @@
 package testCases;
 
-import base.BasePage;
 import base.BaseTest;
 import io.qameta.allure.Description;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.LoginPageT;
 
-import java.io.IOException;
-
 
 public class TestOn extends BaseTest {
+
+    @BeforeTest
+    @Parameters ("browserName")
+    public void launch(String browserName) {
+        launchBrowser(browserName);
+    }
 
     @Test
     @Description("Invalid login scenario with invalid username and password")
